@@ -22,7 +22,7 @@ textarea {
 
 button {
   background:#c7f0f2;
-  color: #c7f0f2;
+  color: #f7f5f6;
   border: none;
   padding: 10px;
   cursor: pointer;
@@ -30,7 +30,7 @@ button {
 }
 
 button:hover {
-  background:#c5f0ed;
+  background:#f5f7f7;
 }
 
 .articulo {
