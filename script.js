@@ -16,6 +16,13 @@ formArticulo.addEventListener("submit", async (e) => {
     autor: formArticulo.autor.value,
     fecha: new Date().toLocaleString(),
     comentarios: []
+  const nuevoComentario = {
+  id: crypto.randomUUID(), 
+  nombre: nombreComentario,
+  texto: textoComentario,
+  fecha: Date.now()
+};
+    
   };
 
   await addDoc(articulosRef, articulo);
@@ -46,9 +53,20 @@ async function mostrarArticulos() {
           data.comentarios.length === 0
           ? "<p class='no-com'>No hay comentarios aún</p>"
           : data.comentarios.map(c => `
-              <div class='comentario'>
-                <strong>${c.nombre}:</strong> ${c.texto}
-              </div>
+             <div class='comentario'>
+  <div class="avatar">${c.nombre.charAt(0).toUpperCase()}</div>
+
+  <div class="texto-com">
+    <strong>${c.nombre}</strong><br>
+    ${c.texto}
+  </div>
+
+  <button class="btn-borrar"
+    onclick="borrarComentario('${docu.id}', '${c.id}')">
+    🗑️
+  </button>
+</div>
+
             `).join("")
         }
       </div>
@@ -73,16 +91,35 @@ window.agregarComentario = async (id) => {
   const articuloDoc = doc(db, "articulos", id);
   const snapshot = await getDocs(articulosRef);
 
+
+
   let articulo;
   snapshot.forEach((d) => {
     if (d.id === id) articulo = d.data();
   });
 
   articulo.comentarios.push({ nombre, texto });
+  articulo.comentarios.push(nuevoComentario);
+
 
   await updateDoc(articuloDoc, articulo);
 
   mostrarArticulos();
+  window.borrarComentario = async (articuloId, comentarioId) => {
+  const ref = doc(db, "articulos", articuloId);
+  const snap = await getDoc(ref);
+
+  if (!snap.exists()) return;
+
+  const data = snap.data();
+
+  const nuevosComentarios = data.comentarios.filter(c => c.id !== comentarioId);
+
+  await updateDoc(ref, { comentarios: nuevosComentarios });
+
+  mostrarArticulos(); 
+};
+
 };
 
 mostrarArticulos();
