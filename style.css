@@ -1,6 +1,6 @@
 body {
   font-family: Arial, sans-serif;
-  background: #f7f7f7;
+  background: #f5c9e0;
   padding: 20px;
 }
 
@@ -21,8 +21,8 @@ textarea {
 }
 
 button {
-  background: #007bff;
-  color: white;
+  background:#c7f0f2;
+  color: #c7f0f2;
   border: none;
   padding: 10px;
   cursor: pointer;
@@ -30,11 +30,11 @@ button {
 }
 
 button:hover {
-  background: #0056b3;
+  background:#c5f0ed;
 }
 
 .articulo {
-  background: white;
+  background: #f7e6ed;
   padding: 15px;
   margin-top: 20px;
   border-radius: 8px;
@@ -46,14 +46,14 @@ button:hover {
 }
 
 .comentario {
-  background: #eee;
+  background: #f5dfeb;
   padding: 6px;
   border-radius: 5px;
   margin-bottom: 5px;
 }
 
 .no-com {
-  color: #777;
+  color: #74f2dd;
 }
 
 .formComentario {
