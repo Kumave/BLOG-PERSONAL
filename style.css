@@ -1,6 +1,6 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
-   background-image: url("https://marketplace.canva.com/EAGjTPSVmjU/1/0/900w/canva-pink-watercolor-playful-floral-abstract-ribbon-bows-girly-phone-wallpaper-Al4eXCEBWQE.jpg")
+  background-image: url("https://marketplace.canva.com/EAGjTPSVmjU/1/0/900w/canva-pink-watercolor-playful-floral-abstract-ribbon-bows-girly-phone-wallpaper-Al4eXCEBWQE.jpg");
   padding: 20px;
 }
 
@@ -37,7 +37,6 @@ button:hover {
   transform: scale(1.05);
 }
 
-
 .articulo {
   background: #fff;
   padding: 20px;
@@ -46,7 +45,6 @@ button:hover {
   box-shadow: 0 0 10px #ffc7e1;
   border: 3px dashed #ff9dc9; 
 }
-
 
 .comentarios {
   margin-top: 10px;
@@ -80,7 +78,6 @@ button:hover {
 .texto-com {
   max-width: 85%;
 }
-
 
 .no-com {
   color: #74f2dd;
