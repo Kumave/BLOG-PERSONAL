@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Mi Blog Personal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h1>Mi Blog Personal</h1>
+
+  <!-- FORMULARIO PARA PUBLICAR ARTÍCULOS -->
+  <h2>Publicar nuevo artículo</h2>
+  <form id="formArticulo">
+    <input type="text" id="titulo" placeholder="Título del artículo" required>
+    <textarea id="contenido" placeholder="Contenido del artículo" required></textarea>
+    <input type="text" id="autor" placeholder="Tu nombre" required>
+    <button type="submit">Publicar</button>
+  </form>
+
+  <hr>
+
+  <!-- LISTA DE ARTÍCULOS -->
+  <h2>Artículos publicados</h2>
+  <div id="listaArticulos"></div>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>
