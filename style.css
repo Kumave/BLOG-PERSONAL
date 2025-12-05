@@ -5,7 +5,8 @@ body {
 }
 
 h1 {
-  font-family: 'Dancing Script', cursive;
+  letter-spacing: 2px;
+  font-family: 'Pacifico', cursive;
   font-size: 60px;
   font-weight: 700;
   text-align: center;
