@@ -1,6 +1,6 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
-  background-image: url("https://img.freepik.com/free-vector/beige-leafy-watercolor-background-vector_53876-136491.jpg?semt=ais_hybrid&w=740&q=80");
+  background-image: url("https://v3.fal.media/files/zebra/-bclxTDOGzhfYZxCNWgn4_output.png");
   padding: 20px;
 }
 
@@ -21,7 +21,7 @@ textarea {
 }
 
 button {
-  background: #ff8ac9;
+  background: #8ab7ff;
   color: white;
   border: none;
   padding: 10px 18px;
@@ -33,7 +33,7 @@ button {
 }
 
 button:hover {
-  background: #ff63b2;
+  background: #5d5aa1;
   transform: scale(1.05);
 }
 
@@ -42,8 +42,8 @@ button:hover {
   padding: 20px;
   margin-top: 20px;
   border-radius: 12px;
-  box-shadow: 0 0 10px #ffc7e1;
-  border: 3px dashed #ff9dc9; 
+  box-shadow: 0 0 10px #c7e3ff;
+  border: 3px dashed #9dc9ff; 
 }
 
 .comentarios {
@@ -64,7 +64,7 @@ button:hover {
 .avatar {
   width: 40px;
   height: 40px;
-  background: #ffb3d9;
+  background: #b3beff;
   color: white;
   display: flex;
   justify-content: center;
@@ -80,7 +80,7 @@ button:hover {
 }
 
 .no-com {
-  color: #74f2dd;
+  color: #37456e;
 }
 
 .formComentario {
