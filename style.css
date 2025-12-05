@@ -5,8 +5,28 @@ body {
 }
 
 h1 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 60px;
+  font-weight: 700;
   text-align: center;
+  color: #7cc9ff;
+
+  background: rgba(255, 255, 255, 0.65);
+  padding: 15px 30px;
+  border-radius: 25px;
+
+  display: inline-block;
+  margin: 20px auto;
+  backdrop-filter: blur(5px);
+
+  text-shadow: 3px 3px 0 #ffffff,
+               6px 6px 12px rgba(145, 200, 255, 0.7);
+
+  border: 3px solid #cceaff;
+
+  box-shadow: 0 6px 10px rgba(164, 216, 255, 0.6);
 }
+
 
 form {
   display: flex;
