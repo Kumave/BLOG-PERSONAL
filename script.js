@@ -62,7 +62,7 @@ async function mostrarArticulos() {
 
                 <button class="btn-borrar"
                   onclick="borrarComentario('${docu.id}', '${c.id}')">
-                  🗑️
+                  🧺
                 </button>
               </div>
             `
