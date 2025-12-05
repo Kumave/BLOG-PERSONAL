@@ -1,12 +1,11 @@
 import { db } from "./firebase-config.js";
 import {
-  collection, addDoc, getDocs, getDoc, doc, updateDoc
+  collection, addDoc, getDocs, getDoc, doc, updateDoc, deleteDoc
 } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 
 const articulosRef = collection(db, "articulos");
 
 const formArticulo = document.getElementById("formArticulo");
-
 
 formArticulo.addEventListener("submit", async (e) => {
   e.preventDefault();
@@ -16,7 +15,7 @@ formArticulo.addEventListener("submit", async (e) => {
     contenido: formArticulo.contenido.value,
     autor: formArticulo.autor.value,
     fecha: new Date().toLocaleString(),
-    comentarios: [] 
+    comentarios: []
   };
 
   await addDoc(articulosRef, articulo);
@@ -24,8 +23,6 @@ formArticulo.addEventListener("submit", async (e) => {
   formArticulo.reset();
   mostrarArticulos();
 });
-
-
 
 async function mostrarArticulos() {
   const contenedor = document.getElementById("listaArticulos");
@@ -43,6 +40,10 @@ async function mostrarArticulos() {
       <h3>${data.titulo}</h3>
       <p><em>Por ${data.autor} | ${data.fecha}</em></p>
       <p>${data.contenido}</p>
+
+      <button class="btn-borrar-art" onclick="borrarArticulo('${docu.id}')">
+        Borrar artículo ˙𐃷˙
+      </button>
 
       <h4>Comentarios</h4>
       <div class="comentarios">
@@ -62,7 +63,7 @@ async function mostrarArticulos() {
 
                 <button class="btn-borrar"
                   onclick="borrarComentario('${docu.id}', '${c.id}')">
-                  🧺
+                   Borrar comentario ˙𐃷˙
                 </button>
               </div>
             `
@@ -82,8 +83,6 @@ async function mostrarArticulos() {
   });
 }
 
-
-
 window.agregarComentario = async (id) => {
   const nombre = document.getElementById(`nombre-${id}`).value;
   const texto = document.getElementById(`comentario-${id}`).value;
@@ -95,7 +94,6 @@ window.agregarComentario = async (id) => {
 
   if (!snap.exists()) return;
 
- 
   const nuevoComentario = {
     id: crypto.randomUUID(),
     nombre,
@@ -111,8 +109,6 @@ window.agregarComentario = async (id) => {
   mostrarArticulos();
 };
 
-
-
 window.borrarComentario = async (articuloId, comentarioId) => {
   const ref = doc(db, "articulos", articuloId);
   const snap = await getDoc(ref);
@@ -121,7 +117,6 @@ window.borrarComentario = async (articuloId, comentarioId) => {
 
   const data = snap.data();
 
-
   const nuevosComentarios = data.comentarios.filter((c) => c.id !== comentarioId);
 
   await updateDoc(ref, { comentarios: nuevosComentarios });
@@ -129,5 +124,18 @@ window.borrarComentario = async (articuloId, comentarioId) => {
   mostrarArticulos();
 };
 
+
+
+window.borrarArticulo = async (id) => {
+  const seguro = confirm("¿Seguro que quieres borrar este artículo?");
+
+  if (!seguro) return;
+
+  await deleteDoc(doc(db, "articulos", id));
+
+  alert("Artículo borrado exitosamente ");
+
+  mostrarArticulos();
+};
 
 mostrarArticulos();
