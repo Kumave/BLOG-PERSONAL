@@ -66,18 +66,7 @@ button:hover {
   border: 3px dashed #9dc9ff; 
 }
 
-.hoja-libreta {
-  background:#becfeb;
-  border-radius: 12px;
-  padding: 20px;
-  border: 2px solid #d1deff;
-  position: relative;
-  box-shadow: 0 0 15px rgba(255, 153, 194, 0.25);
-  background-image:
-    linear-gradient(#c1d5e8 1px, transparent 1px),
-    linear-gradient(90deg, #9ab4e3 1px, transparent 1px);
-  background-size: 100% 28px, 28px 100%;
-}
+
 
 .comentarios {
   margin-top: 10px;
