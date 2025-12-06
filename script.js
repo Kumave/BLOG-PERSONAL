@@ -7,8 +7,6 @@ const articulosRef = collection(db, "articulos");
 
 const formArticulo = document.getElementById("formArticulo");
 
-div.className = "articulo";
-div.className = "articulo hoja-libreta";
 
 formArticulo.addEventListener("submit", async (e) => {
   e.preventDefault();
